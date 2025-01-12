@@ -785,7 +785,7 @@
     <!-- ==================== AUTO-TYPE SCRIPT ==================== -->
     <script>
         var typed = new Typed(".auto-type", {
-            strings: ["Software Developer],
+            strings: ["Software Developer"],
             typeSpeed: 100,
             backSpeed: 100,
             loop: true,
@@ -897,6 +897,28 @@
 
         sr.reveal('.footer', {});
         sr.reveal('.footer_container>div', { interval: 100 });
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".qualification_button");
+        const contents = document.querySelectorAll(".qualification_content");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                // Remove 'qualification_active' from all tabs
+                tabs.forEach(t => t.classList.remove("qualification_active"));
+
+                // Add 'qualification_active' to the clicked tab
+                tab.classList.add("qualification_active");
+
+                // Hide all contents
+                contents.forEach(content => content.classList.remove("qualification_active"));
+
+                // Show the content corresponding to the clicked tab
+                const target = document.querySelector(tab.dataset.target);
+                target.classList.add("qualification_active");
+            });
+        });
+    });
     </script>
 
 </body>
