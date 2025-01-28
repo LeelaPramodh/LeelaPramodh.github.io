@@ -405,44 +405,19 @@ img {
   text-shadow: -25px 20px 3px var(--text-color-light);
 }
 
-/* .home_blob {
+.home_blob {
   width: 200px;
   fill: grey;
 }
- */
-/* .home_blob-img {
+ .home_blob-img {
   width: 175px;
   transition: 0.5s;
-} */
+} 
 
-/* .home_blob-img:hover {
+.home_blob-img:hover {
   transform-origin: 50% 50%;
   transform: scale(1.05);
   cursor: pointer;
-} */
-
-.home_blob {
-  width: 200px;
-  height: 200px;
-  background-color: grey; /* Keep the blob's background as grey */
-  border-radius: 50%; /* Circular shape for the blob */
-  overflow: hidden; /* Prevents the image from spilling out of the blob */
-  position: relative;
-}
-
-.home_blob-img {
-  width: 150%; /* Zooms into the image to fill the blob shape */
-  height: 150%; /* Ensures proper coverage */
-  object-fit: cover; /* Prevents distortion */
-  position: absolute;
-  top: 50%; /* Center the image vertically */
-  left: 50%; /* Center the image horizontally */
-  transform: translate(-50%, -50%); /* Precisely centers the image */
-  transition: transform 0.3s ease; /* Smooth hover effect (optional) */
-}
-
-.home_blob-img:hover {
-  transform: translate(-50%, -50%) scale(1.1); /* Slight zoom on hover */
 }
 
 
