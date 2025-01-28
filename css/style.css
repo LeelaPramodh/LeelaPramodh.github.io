@@ -405,11 +405,11 @@ img {
   text-shadow: -25px 20px 3px var(--text-color-light);
 }
 
-.home_blob {
+/* .home_blob {
   width: 200px;
   fill: grey;
 }
-
+ */
 /* .home_blob-img {
   width: 175px;
   transition: 0.5s;
@@ -421,18 +421,30 @@ img {
   cursor: pointer;
 } */
 
+.home_blob {
+  width: 200px;
+  height: 200px;
+  background-color: grey; /* Keep the blob's background as grey */
+  border-radius: 50%; /* Circular shape for the blob */
+  overflow: hidden; /* Prevents the image from spilling out of the blob */
+  position: relative;
+}
+
 .home_blob-img {
-  width: 100%; /* Fit the parent blob */
-  height: 100%; /* Maintain proportional height */
-  object-fit: cover; /* Ensures the image fills the container */
-  clip-path: circle(50% at 50% 50%); /* Crop the image to a circular shape */
-  transform: scale(1.2); /* Zoom into the image slightly */
-  transition: transform 0.3s ease; /* Add smooth zoom on hover */
+  width: 150%; /* Zooms into the image to fill the blob shape */
+  height: 150%; /* Ensures proper coverage */
+  object-fit: cover; /* Prevents distortion */
+  position: absolute;
+  top: 50%; /* Center the image vertically */
+  left: 50%; /* Center the image horizontally */
+  transform: translate(-50%, -50%); /* Precisely centers the image */
+  transition: transform 0.3s ease; /* Smooth hover effect (optional) */
 }
 
 .home_blob-img:hover {
-  transform: scale(1.4); /* Zoom in further on hover for an interactive effect */
+  transform: translate(-50%, -50%) scale(1.1); /* Slight zoom on hover */
 }
+
 
 .home_data {
   grid-column: 1/3;
