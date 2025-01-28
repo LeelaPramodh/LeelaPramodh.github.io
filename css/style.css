@@ -407,12 +407,18 @@ img {
 
 .home_blob {
   width: 200px;
-  fill: transparent;
+  fill: grey;
 }
 
-.home_blob-img {
+/* .home_blob-img {
   width: 175px;
   transition: 0.5s;
+} */
+.home_blob-img {
+  border-radius: 50%; /* Ensures the image is circular */
+  object-fit: cover; /* Prevents distortion */
+  width: 100%; /* Fits the parent blob */
+  height: 100%;
 }
 
 .home_blob-img:hover {
