@@ -414,17 +414,24 @@ img {
   width: 175px;
   transition: 0.5s;
 } */
-.home_blob-img {
-  border-radius: 50%; /* Ensures the image is circular */
-  object-fit: cover; /* Prevents distortion */
-  width: 100%; /* Fits the parent blob */
-  height: 100%;
-}
 
-.home_blob-img:hover {
+/* .home_blob-img:hover {
   transform-origin: 50% 50%;
   transform: scale(1.05);
   cursor: pointer;
+} */
+
+.home_blob-img {
+  width: 100%; /* Fit the parent blob */
+  height: 100%; /* Maintain proportional height */
+  object-fit: cover; /* Ensures the image fills the container */
+  clip-path: circle(50% at 50% 50%); /* Crop the image to a circular shape */
+  transform: scale(1.2); /* Zoom into the image slightly */
+  transition: transform 0.3s ease; /* Add smooth zoom on hover */
+}
+
+.home_blob-img:hover {
+  transform: scale(1.4); /* Zoom in further on hover for an interactive effect */
 }
 
 .home_data {
