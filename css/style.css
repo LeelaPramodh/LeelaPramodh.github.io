@@ -407,7 +407,7 @@ img {
 
 .home_blob {
   width: 200px;
-  fill: grey;
+  fill: transparent;
 }
 
 .home_blob-img {
