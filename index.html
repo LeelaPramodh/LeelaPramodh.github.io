@@ -942,31 +942,27 @@
     <!-- ==================== EMAIL ==================== -->
 
 <script type="module">
-  import { init, send } from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+  import * as emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/es/index.js';
 
-  // Initialize with your public key
-  init('_Y2hOTynopTcSOOAz');
+  emailjs.init('_Y2hOTynopTcSOOAz');
 
-  // Wait for DOM to load
-  window.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault();
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-      const templateParams = {
-        from_name: document.getElementById('name').value,
-        from_email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-      };
+    const templateParams = {
+      from_name: document.getElementById('name').value,
+      from_email: document.getElementById('email').value,
+      message: document.getElementById('message').value
+    };
 
-      send('service_02b3gqr', 'template_nd04x67', templateParams)
-        .then(function(response) {
-          console.log('Email sent successfully:', response);
-          alert('Email sent successfully!');
-        }, function(error) {
-          console.log('Email send error:', error);
-          alert('Error sending email.');
-        });
-    });
+    emailjs.send('service_02b3gqr', 'template_nd04x67', templateParams)
+      .then(function(response) {
+        console.log('Email sent successfully:', response);
+        alert('Email sent successfully!');
+      }, function(error) {
+        console.log('Email send error:', error);
+        alert('Error sending email.');
+      });
   });
 </script>
 
